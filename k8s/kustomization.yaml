@@ -1,0 +1,15 @@
+
+namespace: default
+resources:
+  - secret.yaml
+  - spring-backend.yaml
+  - ingress.yaml
+  - deployment.yaml
+  - Mysql.yaml
+configMapGenerator:
+  - name: nginx
+    files:
+       - configs/default.conf
+  - name: init-db
+    files:
+       - configs/init.sql
